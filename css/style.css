@@ -26,6 +26,7 @@ main {
   flex: 1;
   max-width: 1400px;
   margin: 0 auto;
+
 }
 
 
@@ -215,6 +216,7 @@ footer {
   width: 100%;
   display: flex; 
   justify-content: center;
+  
 }
 .home-page-image {
   width: 100%;
@@ -234,9 +236,5 @@ img {
 
 .product {
   flex: 1 0 300px;
-}
-
-.home-page-span {
-  margin: 10px;
 }
 
