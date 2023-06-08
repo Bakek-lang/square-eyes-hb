@@ -231,6 +231,12 @@ footer {
   background-color: #0066CC;
   color: #FFF;
 }
+
+.sale-a {
+  color: var(--red) !important;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
 /* images */
 .homepage-container {
   width: 100%;
@@ -296,6 +302,28 @@ main p {
 
 
 /* ABOUT US */
+
+.about-us-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+
+
+.about-us p {
+  max-width: 939px;
+  font-size: 29px;
+  line-height: 55px;
+  font-weight: 400;
+
+}
+
+.paragraph-two {
+  font-size: 40px !important;
+  margin-top: 50px;
+}
 
 
 /* ALL MOVIES */
