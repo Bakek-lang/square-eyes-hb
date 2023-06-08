@@ -5,6 +5,15 @@
   margin: 0;
 }
 
+:root {
+  --yellow: rgba(253, 184, 19, 1);
+  --red: #ff1a1a;
+  --white: #FFF;
+  --black: #222;
+  --blue: #0066cc;
+
+}
+
 body {
   background-color: #222;
   box-sizing: border-box;
@@ -25,9 +34,11 @@ main {
   color: white;
   flex: 1;
   max-width: 1400px;
-  margin: 0 auto;
+  
 
 }
+
+
 
 
 /* OVER-HEADER */
@@ -66,7 +77,7 @@ main {
   margin-left: 35px;
 }
 
-input[type=text] { 
+input[type=text1] { 
   display: flex;
   justify-content: flex-start;
   border-width: 2px;
@@ -205,12 +216,21 @@ footer {
   text-decoration: none;
   background-color: rgba(253, 184, 19, 1);
   color: #222;
-  width: 100px;
-  padding: 15px 30px; 
+  width: 150px;
+  padding: 20px 40px; 
   border-radius: 20px;
   text-align: center;
+  font-weight: 800;
+  font: Inter;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 28px;
 }
 
+.cta-blue {
+  background-color: #0066CC;
+  color: #FFF;
+}
 /* images */
 .homepage-container {
   width: 100%;
@@ -224,17 +244,101 @@ footer {
 }
 
 img {
-  width: 80%;
+  max-width: 1400px;
 }
 
 .products {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 10px;
+  justify-content: center;
+  gap: 100px;
 }
 
 .product {
-  flex: 1 0 300px;
+  flex: 1 0 10px;
+  max-width: 300px;
+  max-height: auto;
+  transform: scale(0.6);
 }
 
+
+/* HOME PAGE */
+
+h1 {
+  font: Inter;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 58px;
+  margin-bottom: 10px;
+  
+}
+
+main p {
+  font: Inter;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.home-page-span {
+  font-size: 36px;
+  font-weight: 600;
+  font: Inter;
+  margin-top: 10px;
+}
+
+.text-cta-homepage {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 35px;
+}
+
+
+/* ABOUT US */
+
+
+/* ALL MOVIES */
+
+/* CATEGORIES */
+
+/* CONTACT US */
+.form-wrap {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 35px;
+}
+
+.form-wrap h1 {
+  text-align: center;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  resize: vertical;
+  outline: none;
+}
+
+input[type=text]:focus, textarea:focus, select:focus {
+  border: 1px solid var(--yellow);
+}
+
+input[type=submit] {
+  background-color: var(--yellow);
+  color: var(--black);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+
+
+/* SALE */
