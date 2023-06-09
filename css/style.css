@@ -249,8 +249,12 @@ footer {
   text-decoration: underline;
 }
 
-.button{
-  font-size: 42px;
+.back-button{
+  font-size: 22px;
+  position: absolute;
+  top: 200px;
+  left: 125px;
+  
   /* position: absolute;
   top: 25%;
   left: 6%; */
@@ -385,10 +389,14 @@ main p {
 
 .movie-container p {
   max-width: 200px;
-  margin-bottom: 5px;
-  margin-top: 15px;
+  margin-bottom: 20px;
+  margin-top: 20px;
   text-align: center;
   text-decoration: underline;
+}
+
+.pricetag {
+  font-size: 32px;
 }
 
 .movie-container img {
@@ -493,6 +501,168 @@ input[type=submit] {
 
 /* SALE */
 
+
+
+/* CART */
+
+.cart-container {
+  display: flex;
+  gap: 75px;
+  width: 80vw;
+  margin-bottom: 75px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 75px;
+}
+
+.cart-container img {
+  width: 275px;
+  height: 440px;
+}
+
+.text-cart-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 100px;
+}
+
+.total-price {
+  display: flex;
+  justify-content: space-between;
+  gap: 200px;
+  border-top: 2px solid var(--white);
+}
+
+.text-cart-container p {
+  font-size: 34px;
+}
+
+.total-price p {
+  font-size: 40px;
+  margin-top: 50px;
+}
+
+.checkout-button {
+  padding: 30px;
+  color: var(--black);
+  background-color: var(--yellow);
+  border-radius: 25px;
+  width: 300px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: bold;
+}
+.cart-text {
+  font-size: 42px !important;
+  text-decoration: underline;
+}
+
+
+/* PAYMENT PAGES */
+
+.payment-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+
+}
+
+.form-container-grid {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  justify-self: center;
+  align-self: center;
+}
+
+.form-payment {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.payment-picture {
+  width: 275px;
+  height: 434px;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  justify-self: center;
+  align-self: center;
+}
+
+input[type=text2] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  resize: vertical;
+  outline: none;
+}
+
+.card-stuff {
+  width: 100%;
+  display: flex;
+  gap: 5px;
+
+}
+
+.card-information i {
+  position: absolute;
+}
+
+.icon {
+  margin-top: 40px;
+}
+
+.icon1 {
+  margin-left: 150px;
+}
+
+.icon2 {
+  margin-left: 185px;
+}
+
+.icon3 {
+  margin-left: 220px;
+}
+
+.icon4 {
+  margin-left: 255px;
+}
+
+.form-payment label{
+  font-size: 30px;
+}
+
+
+
+.purchase-button {
+  padding: 30px;
+  color: var(--black);
+  background-color: var(--yellow);
+  border-radius: 25px;
+  width: 300px;
+  height: 40px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: bold;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-row-end: 3;
+  align-self: flex-start;
+  margin-top: 75px;
+  
+}
 
 /* media queries */
 
