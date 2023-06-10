@@ -1,0 +1,39 @@
+Date : 2023-06-10 14:01:50
+Directory : /Users/henrikbakke/Documents/GitHub/first-repo
+Total : 12 files,  1000 codes, 4 comments, 84 blanks, all 1088 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| HTML     |         11 |        682 |          0 |         11 |        693 |
+| CSS      |          1 |        318 |          4 |         73 |        395 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                           | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                              |         12 |      1,000 |          4 |         84 |      1,088 |
+| . (Files)                                                      |         11 |        682 |          0 |         11 |        693 |
+| css                                                            |          1 |        318 |          4 |         73 |        395 |
++----------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                       | language | code       | comment    | blank      | total      |
++----------------------------------------------------------------+----------+------------+------------+------------+------------+
+| /Users/henrikbakke/Documents/GitHub/first-repo/action.html     | HTML     |         87 |          0 |          2 |         89 |
+| /Users/henrikbakke/Documents/GitHub/first-repo/all_movies.html | HTML     |         66 |          0 |         -1 |         65 |
+| /Users/henrikbakke/Documents/GitHub/first-repo/cart.html       | HTML     |         75 |          0 |          2 |         77 |
+| /Users/henrikbakke/Documents/GitHub/first-repo/categories.html | HTML     |          7 |          0 |          0 |          7 |
+| /Users/henrikbakke/Documents/GitHub/first-repo/comedy.html     | HTML     |         88 |          0 |          2 |         90 |
+| /Users/henrikbakke/Documents/GitHub/first-repo/contact.html    | HTML     |          1 |          0 |          0 |          1 |
+| /Users/henrikbakke/Documents/GitHub/first-repo/css/style.css   | CSS      |        318 |          4 |         73 |        395 |
+| /Users/henrikbakke/Documents/GitHub/first-repo/horror.html     | HTML     |         87 |          0 |          2 |         89 |
+| /Users/henrikbakke/Documents/GitHub/first-repo/kids.html       | HTML     |         87 |          0 |          2 |         89 |
+| /Users/henrikbakke/Documents/GitHub/first-repo/payment.html    | HTML     |         98 |          0 |          0 |         98 |
+| /Users/henrikbakke/Documents/GitHub/first-repo/sale.html       | HTML     |          1 |          0 |          0 |          1 |
+| /Users/henrikbakke/Documents/GitHub/first-repo/success.html    | HTML     |         85 |          0 |          2 |         87 |
+| Total                                                          |          |      1,000 |          4 |         84 |      1,088 |
++----------------------------------------------------------------+----------+------------+------------+------------+------------+
