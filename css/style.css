@@ -26,7 +26,7 @@ header {
   position: sticky;
   width: 100%;
   top: 0px;
-  z-index: 1;
+  z-index: 2;
 
 }
 
@@ -425,7 +425,8 @@ main p {
   align-items: center;
 }
 
-.placeholder {
+.placeholder,
+.placeholder-sale {
   width: 200px;
 }
 
@@ -557,7 +558,21 @@ input[type=submit] {
 
 /* SALE */
 
+.red-line {
+  border-top: 4px solid var(--red);
+  z-index: 1;
+  width: 50%;
+  transform: rotate(155deg);
+  position: relative;
+  bottom: 32px;
+}
 
+.red-text-span {
+  position: absolute;
+  margin-left: 40px;
+  font-size: 52px;
+  color: var(--red)
+}
 
 /* CART */
 
@@ -939,18 +954,7 @@ input[type=text2] {
 
 /* SURPRISE PAGE */
 
-
-
-
-
-
-
-
-
-
-
-
-
+/* same as productpage */
 
 
 
