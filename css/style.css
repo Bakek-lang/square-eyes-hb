@@ -268,8 +268,8 @@ footer {
 .back-button{
   font-size: 22px;
   position: absolute;
-  top: 200px;
-  left: 125px;
+  top: 25%;
+  left: 5%;
   
   /* position: absolute;
   top: 25%;
@@ -289,7 +289,6 @@ footer {
 .home-page-image {
   width: 100%;
   height: 400px;
-  
 }
 
 img {
@@ -300,6 +299,7 @@ img {
   display: flex;
   justify-content: center;
   gap: 20px;
+  margin-right: 25px;
 }
 
 .product {
@@ -312,6 +312,8 @@ img {
 .product img {
   max-height: 444px;
   max-width: 300px;
+  width: 100%;
+  height: auto;
 }
 
 
@@ -1013,10 +1015,112 @@ input[type=password] {
   cursor: pointer;
 }
 
+/* harmbuger stuff */
+
+#menu-checkbox,
+.hamburger-icon {
+  display: none;
+}
+
+.invisible-nav {
+  display: none;
+  position: static;
+}
+
+.buttons-homepage1 {
+  display: none;
+}
+
+
 /* media queries */
 
 @media (min-width: 1400px) {
   .placeholder {
     display: none;
   }
+}
+
+
+@media (max-width: 850px) {
+  input[type=text1],
+  .downNav,
+  .home-page-image {
+    display: none;
+  }
+
+  .invisible-nav {
+    display: none;
+  }
+
+
+  .nav-icons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    
+  }
+
+  .fa {
+    padding: 0px;
+  }
+
+  .products-homepage {
+    grid-row: 2 / 3;
+  }
+
+  .homepage-container {
+    grid-template-rows: min-content min-content 1fr;
+  }
+
+  .hamburger-icon {
+    display: block;
+    font-size: 1.5rem;
+  }
+  
+
+  #menu-checkbox:checked ~ .invisible-nav {
+    display: block;
+  }
+
+  header {
+    position: relative;
+  }
+
+  .invisible-nav a {
+    display: block;
+    padding: 1rem 2rem;
+  }
+
+  .invisible-nav {
+    /* display: block; */
+    position: static;
+    background-color: var(--yellow);
+    position: absolute;
+    right: 0%;
+    top: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .buttons-homepage1 {
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+    text-align: center;
+  }
+
+  .buttons-homepage {
+    display: none;
+  }
+
+  .products-homepage {
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
+  }
+
+
+
 }
