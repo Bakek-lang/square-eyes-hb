@@ -62,6 +62,8 @@ h1 {
 .overNav {
   display: flex;
   justify-content: space-around;
+  white-space: wrap;
+  flex-wrap: wrap;
 }
 
 .overNav li {
@@ -208,6 +210,7 @@ footer {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .text-footer {
@@ -216,6 +219,7 @@ footer {
   gap: 50px;
   margin-left: 35px;
   font-size: 20px;
+
 }
 
 .social-icons {
@@ -641,8 +645,8 @@ input[type=submit] {
 
 .payment-container {
   display: grid;
-  grid-template-rows: 488px 1fr;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: min-content 1fr;
+  grid-template-columns: 30% 30% 40%;
 
 }
 
@@ -653,6 +657,7 @@ input[type=submit] {
   grid-row-end: 2;
   justify-self: center;
   align-self: center;
+  margin: 0 1rem;
 }
 
 .form-payment {
@@ -668,14 +673,16 @@ input[type=checkbox] {
 }
 
 .payment-picture {
-  width: 275px;
-  height: 434px;
+  /* width: 275px;
+  height: 434px; */
+  max-width: 100%;
+  max-height: 100%;
   grid-column-start: 3;
   grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 2;
   justify-self: center;
-  align-self: center;
+  align-self: start;
 }
 
 input[type=text2] {
@@ -728,21 +735,20 @@ input[type=text2] {
 
 
 .purchase-button {
-  padding: 30px;
+  padding: 30px 100px;
   color: var(--black);
   background-color: var(--yellow);
   border-radius: 25px;
-  width: 300px;
-  height: 40px;
   text-align: center;
   text-decoration: none;
   font-size: 30px;
   font-weight: bold;
   grid-row-start: 2;
-  grid-row-end: 3;
-  grid-column-start: 2;
+  grid-column-start: 1;
+  grid-column-end: 4;
   grid-row-end: 3;
   align-self: flex-start;
+  justify-self: center;
   margin-top: 35px;
   margin-bottom: 35px;
   
@@ -1063,7 +1069,7 @@ input[type=password] {
   }
 
   .fa {
-    padding: 0px;
+    padding: 5px;
   }
 
   .products-homepage {
@@ -1122,6 +1128,24 @@ input[type=password] {
     grid-row: 3 / 4;
   }
 
+  .back-button {
+    top: 20%;
+  }
+  
+  .card-information i {
+    display: none;
+  }
 
+  .purchase-button {
+    padding: 30px 60px;
+  }
 
+  .copyright,
+  .text-footer {
+    margin-top: 10px;
+  }
+
+  .refunds {
+    display: none;
+  }
 }
