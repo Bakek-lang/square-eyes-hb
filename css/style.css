@@ -1065,6 +1065,7 @@ input[type=password] {
     justify-content: flex-end;
     align-items: center;
     gap: 20px;
+    margin-right: 10%;
     
   }
 
@@ -1129,7 +1130,7 @@ input[type=password] {
   }
 
   .back-button {
-    top: 20%;
+    display: none;
   }
   
   .card-information i {
@@ -1148,4 +1149,14 @@ input[type=password] {
   .refunds {
     display: none;
   }
+
+  .categories-button {
+    width: 200px;
+  }
 }
+
+/* @media (max-width: 400px) {
+  .fa-shopping-cart {
+    display: none;
+  }
+} */
