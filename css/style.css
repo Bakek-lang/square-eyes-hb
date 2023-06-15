@@ -1160,6 +1160,10 @@ input[type=password] {
   .connect {
     grid-column-start: 1;
     grid-column-end: 3;
-    
+
+  }
+
+  .thankyou-page-container {
+    height: 100vh;
   }
 }
