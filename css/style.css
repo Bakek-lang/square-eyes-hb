@@ -547,7 +547,7 @@ input[type=text]:focus, textarea:focus, select:focus {
 input[type=submit] {
   background-color: var(--yellow);
   color: var(--black);
-  padding: 20px 150px;
+  padding: 20px 100px;
   border: none;
   border-radius: 20px;
   cursor: pointer;
@@ -1154,9 +1154,3 @@ input[type=password] {
     width: 200px;
   }
 }
-
-/* @media (max-width: 400px) {
-  .fa-shopping-cart {
-    display: none;
-  }
-} */
