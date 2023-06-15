@@ -1153,4 +1153,13 @@ input[type=password] {
   .categories-button {
     width: 200px;
   }
+
+  .back-to-home {
+    display: none;
+  }
+  .connect {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    
+  }
 }
