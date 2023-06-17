@@ -70,7 +70,6 @@ h1 {
 }
 
 .overNav li {
-  /* flex: 0 0 auto; */
   list-style: none;
   text-decoration: underline;
 }
@@ -94,7 +93,9 @@ h1 {
   margin-left: 35px;
 }
 
-input[type=text1] { 
+
+
+.text1 { 
   display: flex;
   justify-content: flex-start;
   border-width: 2px;
@@ -275,15 +276,9 @@ footer {
   position: absolute;
   top: 25%;
   left: 5%;
-  
-  /* position: absolute;
-  top: 25%;
-  left: 6%; */
   cursor: pointer;
-
-
-  
 }
+
 /* images */
 .homepage-container {
   width: 100%;
@@ -388,10 +383,6 @@ main p {
   text-align: center;
 }
 
-
-
-
-
 .about-us p {
   max-width: 939px;
   font-size: 29px;
@@ -422,8 +413,6 @@ main p {
   flex-wrap: wrap;
   gap: 42px 200px;
   justify-content: center;
-  
-  
 }
 
 .movie-container {
@@ -483,8 +472,6 @@ main p {
 .read-button:hover {
   opacity: 0.7;
 }
-
-
 
 /* CATEGORIES */
 .categorie-buttons-container {
@@ -674,8 +661,6 @@ input[type=checkbox] {
 }
 
 .payment-picture {
-  /* width: 275px;
-  height: 434px; */
   max-width: 100%;
   max-height: 100%;
   grid-column-start: 3;
@@ -1049,7 +1034,7 @@ input[type=password] {
 
 
 @media (max-width: 850px) {
-  input[type=text1],
+  .text1,
   .downNav,
   .home-page-image,
   .homepage-image-container {
