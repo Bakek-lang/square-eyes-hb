@@ -20,6 +20,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  font-family: 'inter';
 }
 
 header {
@@ -41,7 +42,6 @@ main {
 }
 
 h1 {
-  font: Inter;
   font-weight: 800;
   font-size: 48px;
   line-height: 58px;
