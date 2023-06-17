@@ -51,6 +51,9 @@ h1 {
   
 }
 
+.invisible-text {
+  display: none;
+}
 
 
 /* OVER-HEADER */
