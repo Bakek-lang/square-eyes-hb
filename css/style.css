@@ -264,7 +264,6 @@ footer {
 }
 
 .sale-a {
-  color: var(--red) !important;
   text-transform: uppercase;
   text-decoration: underline;
 }
@@ -685,7 +684,7 @@ input[type=checkbox] {
   align-self: start;
 }
 
-input[type=text2] {
+.text2{
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
