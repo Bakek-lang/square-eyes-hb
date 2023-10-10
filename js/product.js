@@ -49,7 +49,8 @@ function surpriseMe() {
   const newReadButton = document.querySelector(".surprise-button");
   newReadButton.addEventListener("click", surpriseMe);
 
-  updateQueryString(randomNumber);
+  // updateQueryString(randomNumber);
+  updateQueryString(movie.id);
 }
 
 const url = new URL("https://api.noroff.dev/api/v1/square-eyes");
@@ -64,7 +65,12 @@ async function makeApiCalls() {
     const params = new URLSearchParams(queryString);
     const id = params.get("id");
 
-    productContainer.innerHTML = generateMovieHTML(results[id]);
+    const matchingMovie = results.find(function (object) {
+      return object.id === id;
+    });
+
+    // productContainer.innerHTML = generateMovieHTML(results[id]);
+    productContainer.innerHTML = generateMovieHTML(matchingMovie);
 
     const surpriseButton = document.querySelector(".surprise-button");
     surpriseButton.addEventListener("click", surpriseMe);
