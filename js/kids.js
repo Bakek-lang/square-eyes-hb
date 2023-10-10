@@ -17,7 +17,7 @@ async function makeApiCall() {
         <img class="movie-image" src="${results[i].image}" alt="Movie Poster"/>
         <p class="movie-title">${results[i].title}</p>
         <a class="watch-button" href="cart.html">Add to Cart</a>
-        <a class="read-button" href="product2.html?id=${i}">Read more</a>
+        <a class="read-button" href="product.html?id=${i}">Read more</a>
         </div>
         `;
         } else {
@@ -26,7 +26,7 @@ async function makeApiCall() {
           <img class="movie-image" src="${results[i].image}" alt="blablabla"/>
           <p class="movie-title">${results[i].title}</p>
           <a class="watch-button" href="cart.html">Add to Cart</a>
-          <a class="read-button" href="product2.html?id=${i}">Read more</a>
+          <a class="read-button" href="product.html?id=${i}">Read more</a>
           </div>
           `;
         }
