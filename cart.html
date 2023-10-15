@@ -1,36 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Square Eyes: Unleash your cinematic cravings with our online movie streaming service! Dive into an extensive library of films from all genres and eras, right at your fingertips. Immerse yourself in an unparalleled movie-watching experience. Sign up today and get ready to satisfy your Square Eyes!">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Square Eyes: Unleash your cinematic cravings with our online movie streaming service! Dive into an extensive library of films from all genres and eras, right at your fingertips. Immerse yourself in an unparalleled movie-watching experience. Sign up today and get ready to satisfy your Square Eyes!"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
     <script
       src="https://kit.fontawesome.com/d59adeadcb.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="icon" href="Logo/SquareEyes_Logo.png">
+    <link rel="icon" href="Logo/SquareEyes_Logo.png" />
+    <script src="js/cart.js"></script>
     <title>Cart | Square Eyes</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="overNav-container">
+      <div class="overNav-container">
         <ul class="overNav">
-            <li class="refunds">&check;Refunds</li>
-            <li>&check;Every 5th movie for FREE</li>
-            <li>&check;Cheap and reliable</li>
+          <li class="refunds">&check;Refunds</li>
+          <li>&check;Every 5th movie for FREE</li>
+          <li>&check;Cheap and reliable</li>
         </ul>
-        </div>
-        <div class="header-main">
-            <a href="index.html"><img src="Logo/SquareEyes_Logo.png" alt="Logo"></a>
-            <input class="text1" aria-label="Search box" type="search"  placeholder="Search..">
-            <div class="nav-icons">
-                <a aria-label="Login button" class="fa fa-user" href="login.html"></a>
-                <a aria-label="shopping cart" class="fa fa-shopping-cart" href="cart.html"></a>
-                <input type="checkbox" id="menu-checkbox">
-          <label aria-label="hamburger menu" for="menu-checkbox" class="hamburger-icon"
+      </div>
+      <div class="header-main">
+        <a href="index.html"
+          ><img src="Logo/SquareEyes_Logo.png" alt="Logo"
+        /></a>
+        <input
+          class="text1"
+          aria-label="Search box"
+          type="search"
+          placeholder="Search.."
+        />
+        <div class="nav-icons">
+          <a aria-label="Login button" class="fa fa-user" href="login.html"></a>
+          <a
+            aria-label="shopping cart"
+            class="fa fa-shopping-cart"
+            href="cart.html"
+          ></a>
+          <div class="cart-badge"></div>
+          <input type="checkbox" id="menu-checkbox" />
+          <label
+            aria-label="hamburger menu"
+            for="menu-checkbox"
+            class="hamburger-icon"
             ><i class="fas fa-bars"></i
           ></label>
           <div class="invisible-nav" role="navigation">
@@ -40,30 +62,105 @@
             <a href="about_us.html">About us</a>
             <a href="contact.html">Contact</a>
           </div>
-            </div>
         </div>
-        <div class="downNav">
+      </div>
+      <div class="downNav">
         <nav>
-            <ul>
-                <li><a class="sale-a" href="sale.html">Sale!</a></li>
-                <li><a href="categories.html">Categories</a></li>
-                <li><a href="all_movies.html">All movies</a></li>
-            </ul>
+          <ul>
+            <li><a class="sale-a" href="sale.html">Sale!</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="all_movies.html">All movies</a></li>
+          </ul>
         </nav>
         <div class="contact-about">
-            <ul class="about-contact">
-                <li><a href="about_us.html">About us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+          <ul class="about-contact">
+            <li><a href="about_us.html">About us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
         </div>
-        </div>
+      </div>
     </header>
     <main>
-        <h1>Cart</h1>
-        <div class="cart-container">
-          <a class="back-button" onclick="history.go(-1)">&#8592; BACK</a>
-          <img src="Images/Hobbs&Shaw.jpeg" alt="Hobbs & Shaw cover">
-          <div class="text-cart-container">
+      <h1>Cart</h1>
+      <a class="back-button" onclick="history.go(-1)">&#8592; BACK</a>
+      <div class="cart-container">
+        <div class="cart-header">
+          <p class="product-header">PRODUCT DETAILS</p>
+          <p class="quantity-header">QUANTITY</p>
+          <p class="price-header">PRICE</p>
+          <p>TOTAL</p>
+        </div>
+        <div class="cart-item">
+          <div class="image-text-cart">
+            <img class="cart-img" src="Images/Batman.jpeg" alt="" />
+            <div class="cart-item-text">
+              <h2>Batman bla bla bla</h2>
+              <p>2019</p>
+            </div>
+          </div>
+          <div class="quantity-container">
+            <i class="fa-solid fa-minus"></i>
+            <div class="quantity">1</div>
+            <i class="fa-solid fa-plus"></i>
+          </div>
+
+          <p>$9.99</p>
+
+          <p>$9.99</p>
+
+          <button class="remove-button">Remove</button>
+        </div>
+        <div class="cart-item">
+          <div class="image-text-cart">
+            <img class="cart-img" src="Images/Batman.jpeg" alt="" />
+            <div class="cart-item-text">
+              <h2>Batman bla bla bla</h2>
+              <p>2019</p>
+            </div>
+          </div>
+          <div class="quantity-container">
+            <i class="fa-solid fa-minus"></i>
+            <div class="quantity">1</div>
+            <i class="fa-solid fa-plus"></i>
+          </div>
+
+          <p>$9.99</p>
+
+          <p>$9.99</p>
+
+          <button class="remove-button">Remove</button>
+        </div>
+        <div class="cart-item">
+          <div class="image-text-cart">
+            <img class="cart-img" src="Images/Batman.jpeg" alt="" />
+            <div class="cart-item-text">
+              <h2>Batman bla bla bla</h2>
+              <p>2019</p>
+            </div>
+          </div>
+          <div class="quantity-container">
+            <i class="fa-solid fa-minus"></i>
+            <div class="quantity">1</div>
+            <i class="fa-solid fa-plus"></i>
+          </div>
+
+          <p>$9.99</p>
+
+          <p>$9.99</p>
+
+          <button class="remove-button">Remove</button>
+        </div>
+        <div class="total-price-cart">
+          <div class="total-price-cart-text">
+            <h3>Total Price:</h3>
+            <p>$9.99</p>
+          </div>
+          <a href="payment.html">Checkout</a>
+        </div>
+      </div>
+      <!-- <div class="cart-container">
+        <img src="Images/Hobbs&Shaw.jpeg" alt="Hobbs & Shaw cover" />
+        <div class="text-cart-container">
           <p class="cart-text">Hobbs & Shaw (2019)</p>
           <p>Price: $4.99</p>
           <div class="total-price">
@@ -71,23 +168,29 @@
             <p>$4.99</p>
           </div>
           <a class="checkout-button" href="payment.html">Checkout</a>
-          </div>
         </div>
-        
-        
+      </div> -->
     </main>
     <footer>
-        <div class="text-footer">
-            <a href="about_us.html">About us</a>
-            <a href="contact.html">Contact</a>
-        </div>
-        <div class="copyright">
-            <p>Copyright Square Eyes 2023</p>
-        </div>
-        <div class="social-icons">
-            <a aria-label="Social icon reddit" href="https://www.reddit.com/" class="fa fa-reddit"></a>
-            <a aria-label="Social icon facebook" href="https://www.facebook.com/" class="fa fa-facebook"></a>
-        </div>
+      <div class="text-footer">
+        <a href="about_us.html">About us</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="copyright">
+        <p>Copyright Square Eyes 2023</p>
+      </div>
+      <div class="social-icons">
+        <a
+          aria-label="Social icon reddit"
+          href="https://www.reddit.com/"
+          class="fa fa-reddit"
+        ></a>
+        <a
+          aria-label="Social icon facebook"
+          href="https://www.facebook.com/"
+          class="fa fa-facebook"
+        ></a>
+      </div>
     </footer>
-</body>
+  </body>
 </html>

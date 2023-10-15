@@ -6,7 +6,7 @@ function generateMovieHTML(movie) {
   return `<a class="back-button" onclick="history.go(-1)">&#8592; BACK</a>
   <div class="image-button-flex">
   <img src="${movie.image}" alt="blabla" />
-  <a href="cart.html" class="watch-button">Add to Cart</a>
+  <a data-movieid="${movie.id}" class="watch-button">Add to Cart</a>
   </div>
   <h2 class="movie-title">${movie.title}</h2>
   <p class="text-productpage">

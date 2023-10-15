@@ -15,7 +15,7 @@ async function makeApiCall() {
         <div class="red-line"></div>
         <img class="movie-image" src="${results[i].image}" alt="blablabla"/>
         <p class="movie-title">${results[i].title}</p>
-        <a class="watch-button" href="cart.html">Add to Cart</a>
+        <a class="watch-button" data-movieid="${results[i].id}">Add to Cart</a>
         <a class="read-button" href="product.html?id=${results[i].id}">Read more</a>
         </div>
         `;
