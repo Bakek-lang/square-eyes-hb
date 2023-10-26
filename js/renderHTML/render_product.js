@@ -1,4 +1,5 @@
 import { sanitizeHTML } from "../safety/security.js";
+import { sanitizeURL } from "../safety/security.js";
 import { results } from "../data/data.js";
 // for surprise me function need to declare lastrandomnumber
 let lastRandomNumber = -1;
@@ -11,6 +12,18 @@ function updateQueryString(getID) {
   history.replaceState({}, "", `${currentUrl.pathname}?${params.toString()} `);
 }
 
+// find matching movie and use inside dataToRender function in index.js
+export function updateMovieProduct() {
+  const queryString = document.location.search;
+  const params = new URLSearchParams(queryString);
+  const id = params.get("id");
+
+  const matchingMovie = results.find(function (object) {
+    return object.id === id;
+  });
+  console.log(matchingMovie);
+  return matchingMovie;
+}
 // surprise me button for product details page (put inside renderproduct.html on bottom)
 function surpriseMe() {
   let randomNumber;
@@ -33,26 +46,13 @@ function surpriseMe() {
   updateMovieDisplay();
 }
 
-// find matching movie and use inside dataToRender function in index.js
-export function updateMovieProduct() {
-  const queryString = document.location.search;
-  const params = new URLSearchParams(queryString);
-  const id = params.get("id");
-
-  const matchingMovie = results.find(function (object) {
-    return object.id === id;
-  });
-  console.log(matchingMovie);
-  return matchingMovie;
-}
-
 // render product details page
 export function renderProductHTML(results) {
   productContainer.innerHTML = "";
 
   const products = `<a class="back-button" onclick="history.go(-1)">&#8592; BACK</a>
   <div class="image-button-flex">
-    <img src="${results.image}" alt="blabla" />
+    <img src="${sanitizeURL(results.image)}" alt="blabla" />
     <a data-movieid="${sanitizeHTML(
       results.id
     )}" class="watch-button">Add to Cart</a>

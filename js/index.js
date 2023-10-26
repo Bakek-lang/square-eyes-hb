@@ -11,6 +11,8 @@ import {
 } from "./data/data.js";
 import { renderProductHTML } from "./renderHTML/render_product.js";
 import { updateMovieProduct } from "./renderHTML/render_product.js";
+import { retrieveMovieIds } from "./renderHTML/render_cart.js";
+import { renderingCart } from "./renderHTML/render_cart.js";
 // make a function that checks the url site and then uses that to retrieve correct dataset. Use correct data array as an argument to the renderingHTML function.
 
 function getDataForCurrentCategory() {
@@ -28,6 +30,11 @@ function getDataForCurrentCategory() {
     movie.type = "movieProduct";
     return movie;
   }
+  if (url.includes("cart")) {
+    const cartMovie = retrieveMovieIds(results);
+    cartMovie.type = "cartMovie";
+    return cartMovie;
+  }
   console.error("Unknown category");
   return null;
 }
@@ -38,6 +45,9 @@ if (dataToRender) {
   if (dataToRender.type === "movieProduct") {
     console.log("u made it");
     renderProductHTML(dataToRender);
+  } else if (dataToRender.type === "cartMovie") {
+    console.log("cart works");
+    renderingCart(dataToRender);
   } else {
     renderingHTML(dataToRender);
   }
