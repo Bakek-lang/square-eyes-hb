@@ -74,10 +74,3 @@ export function getFavoritesArray(movies) {
   movieArray.shift();
   return movieArray;
 }
-
-// console.log(getActionArray(results));
-// console.log(getComedyArray(results));
-// console.log(getFavoritesArray(results));
-// console.log(getHorrorArray(results));
-// console.log(getKidsArray(results));
-// console.log(getSaleArray(results));
