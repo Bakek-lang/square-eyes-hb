@@ -1,9 +1,3 @@
-// Make and export function that removes html characters from input fetched from api. security for XSS attacks
-
-// Takes string as argument and replaces potentially harmful characters with their corresponding HTML entities. (semicolon part of standard notation for HTML entities)
-
-// use this function when implementing DOMParse + string literals + DocumentFragment (maybe also use for titles, not sure yet)
-
 // function for sanitizing HTMLs
 export function sanitizeHTML(input) {
   const string = String(input);
@@ -27,7 +21,6 @@ export function sanitizeURL(input) {
     if (forbiddenProtocols.includes(parsedURL.protocol)) {
       throw new Error("Forbidden protocol detected");
     }
-    console.log("sanitizeURL works");
     return parsedURL.toString();
   } catch (error) {
     console.error(error.message);

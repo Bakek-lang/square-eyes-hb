@@ -1,5 +1,4 @@
-import { results } from "../data/data.js";
-import { sanitizeHTML, sanitizeURL } from "../safety/security.js";
+import { sanitizeHTML, sanitizeURL } from "../security/sanitize.js";
 
 export function retrieveMovieIds(results) {
   const dataString = localStorage.getItem("data");
@@ -25,8 +24,6 @@ export function retrieveMovieIds(results) {
   console.log(movieIds);
   return movieIds;
 }
-
-retrieveMovieIds(results);
 
 export function renderingCart(results) {
   const cartContainer = document.querySelector(".cart-container");

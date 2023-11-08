@@ -1,11 +1,18 @@
 const url = "https://api.noroff.dev/api/v1/square-eyes";
 
 export async function makeApiCall() {
-  const response = await fetch(url);
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error("Response not ok");
+    }
+    const results = await response.json();
 
-  const results = await response.json();
+    const data = results;
 
-  const data = results;
-
-  return data;
+    return data;
+  } catch (e) {
+    console.error("API call failed: ", e);
+    throw e;
+  }
 }

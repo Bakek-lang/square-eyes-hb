@@ -3,23 +3,18 @@ import { makeApiCall } from "./fetch.js";
 
 export let results = await makeApiCall();
 
-console.log(results);
-
-// Make function for index file arrays of data from API
-// results
-
-// Make function for comedy file arrays of data from API
+// Function for comedy file arrays of data from API
 export function getComedyArray(movies) {
   const movieArray = [];
   for (let i = 0; i < movies.length; i++) {
-    if (movies[i].genre === "Comedy" || movies[i].genre === "Drama") {
+    if (movies[i].genre === "Comedy") {
       movieArray.push(movies[i]);
     }
   }
   return movieArray;
 }
 
-// Make function for action file arrays of data from API
+// Function for action file arrays of data from API
 export function getActionArray(movies) {
   const movieArray = [];
   for (let i = 0; i < movies.length; i++) {
@@ -30,7 +25,7 @@ export function getActionArray(movies) {
   return movieArray;
 }
 
-// Make function for kids file arrays of data from API
+// Function for kids file arrays of data from API
 export function getKidsArray(movies) {
   const movieArray = [];
   for (let i = 0; i < movies.length; i++) {
@@ -41,18 +36,18 @@ export function getKidsArray(movies) {
   return movieArray;
 }
 
-// Make function for horror file arrays of data from API
+// Function for horror file arrays of data from API
 export function getHorrorArray(movies) {
   const movieArray = [];
   for (let i = 0; i < movies.length; i++) {
-    if (movies[i].genre === "Horror" || movies[i].genre === "Drama") {
+    if (movies[i].genre === "Horror") {
       movieArray.push(movies[i]);
     }
   }
   return movieArray;
 }
 
-// Make function for SALE file arrays
+// Function for SALE file arrays
 export function getSaleArray(movies) {
   const movieArray = [];
   for (let i = 0; i < movies.length; i++) {
@@ -63,7 +58,7 @@ export function getSaleArray(movies) {
   return movieArray;
 }
 
-// Make function for favorites for home page
+// Function for favorites for home page
 export function getFavoritesArray(movies) {
   const movieArray = [];
   for (let i = 0; i < movies.length; i++) {

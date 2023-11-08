@@ -13,8 +13,9 @@ import { updateMovieProduct } from "./renderHTML/render_product.js";
 import { retrieveMovieIds } from "./renderHTML/render_cart.js";
 import { renderingCart } from "./renderHTML/render_cart.js";
 import { renderImages } from "./renderHTML/render_images.js";
+import { changeTitle } from "./renderHTML/render_product.js";
+import { inTheCart } from "./cart_new.js";
 
-// make a function that checks the url site and then uses that to retrieve correct dataset. Use correct data array as an argument to the renderingHTML functions.
 function getDataForCurrentCategory() {
   const url = window.location.href;
 
@@ -30,7 +31,7 @@ function getDataForCurrentCategory() {
     url.includes("about_us")
   ) {
     const favorites = getFavoritesArray(results);
-    favorites.type = "homepage";
+    favorites.type = "favorites";
     return favorites;
   }
   if (url.includes("product")) {
@@ -53,12 +54,15 @@ if (dataToRender) {
   if (dataToRender.type === "movieProduct") {
     console.log("u made it");
     renderProductHTML(dataToRender);
+    changeTitle(dataToRender);
   } else if (dataToRender.type === "cartMovie") {
     console.log("cart works");
     renderingCart(dataToRender);
-  } else if (dataToRender.type === "homepage") {
+  } else if (dataToRender.type === "favorites") {
     renderImages(dataToRender);
   } else {
     renderingHTML(dataToRender);
   }
 }
+
+inTheCart();

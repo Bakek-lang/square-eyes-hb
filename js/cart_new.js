@@ -1,4 +1,4 @@
-function inTheCart() {
+export function inTheCart() {
   updateBadge();
   handleButtonsClicks();
 }
@@ -57,4 +57,4 @@ function handleQuantityButtonClick(event) {
   quantity.textContent = quantityCount;
 }
 
-inTheCart();
+// inTheCart();

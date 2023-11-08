@@ -1,10 +1,9 @@
-import { sanitizeHTML } from "../safety/security.js";
-import { sanitizeURL } from "../safety/security.js";
+import { sanitizeHTML } from "../security/sanitize.js";
+import { sanitizeURL } from "../security/sanitize.js";
 import { results } from "../data/data.js";
 // for surprise me function need to declare lastrandomnumber
 let lastRandomNumber = -1;
-const productContainer = document.querySelector(".product-flex-container");
-// update query string -- use on surprise me button ( put inside renderproducthtml on bottom)
+// update query string
 function updateQueryString(getID) {
   const currentUrl = new URL(window.location.href);
   const params = new URLSearchParams(currentUrl.search);
@@ -12,7 +11,7 @@ function updateQueryString(getID) {
   history.replaceState({}, "", `${currentUrl.pathname}?${params.toString()} `);
 }
 
-// find matching movie and use inside dataToRender function in index.js
+// find matching movie id from querystring and results array.
 export function updateMovieProduct() {
   const queryString = document.location.search;
   const params = new URLSearchParams(queryString);
@@ -48,8 +47,8 @@ function surpriseMe() {
 
 // render product details page
 export function renderProductHTML(results) {
+  const productContainer = document.querySelector(".product-flex-container");
   productContainer.innerHTML = "";
-
   const products = `<a class="back-button" onclick="history.go(-1)">&#8592; BACK</a>
   <div class="image-button-flex">
     <img src="${sanitizeURL(results.image)}" alt="blabla" />
@@ -82,4 +81,8 @@ export function renderProductHTML(results) {
 
   const surpriseButton = document.querySelector(".surprise-button");
   surpriseButton.addEventListener("click", surpriseMe);
+}
+
+export function changeTitle(movie) {
+  document.title = `${movie.title} | Square Eyes`;
 }

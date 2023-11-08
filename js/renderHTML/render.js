@@ -1,8 +1,8 @@
-// no imports, only rendering html functions
+import { hideLoadingIndicator } from "../components/loading_indicator.js";
 
-// number 2 way of rendering, put inside a function. (document.createElement + DocumentFragment)
-
+// Render HTML for all movies page. Using fragment + document.createElement
 export function renderingHTML(results) {
+  hideLoadingIndicator();
   const allMoviesContainer = document.querySelector(".all-movies-container");
   const fragment = document.createDocumentFragment();
   for (let i = 0; i < results.length; i++) {
@@ -28,7 +28,7 @@ export function renderingHTML(results) {
     const movieImage = document.createElement("img");
     movieImage.className = "movie-image";
     movieImage.src = results[i].image;
-    movieImage.alt = "Movie Poster";
+    movieImage.alt = `Movie ${results[i].title}`;
     movieContainer.appendChild(movieImage);
 
     const movieTitle = document.createElement("p");
@@ -51,7 +51,4 @@ export function renderingHTML(results) {
     fragment.appendChild(movieContainer);
   }
   allMoviesContainer.appendChild(fragment);
-  console.log(typeof results[0].title);
 }
-
-// DOMParse + string literals + DocumentFragments
