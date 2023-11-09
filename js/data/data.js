@@ -1,7 +1,15 @@
 // import apicall function and export results
 import { makeApiCall } from "./fetch.js";
 
-export let results = await makeApiCall();
+export async function loadAndReturnResults() {
+  try {
+    const results = await makeApiCall();
+    return results;
+  } catch (error) {
+    throw error;
+  }
+}
+// export let results = await makeApiCall();
 
 // Function for comedy file arrays of data from API
 export function getComedyArray(movies) {

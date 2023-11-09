@@ -970,7 +970,7 @@ input[type="password"] {
   right: 8px;
 }
 
-/* CART STUFF FOR JAVASCRIPT DYNAMICALLY 12. OKTOBER 2023 */
+/* CART STUFF */
 
 .cart-container {
   display: flex;
@@ -1066,6 +1066,13 @@ input[type="password"] {
   font-size: 17px;
   font-weight: bold;
   cursor: pointer;
+}
+
+.error {
+  border: 1px solid darkred;
+  padding: 2rem;
+  color: var(--yellow);
+  background: rgba(255, 0, 0, 0.1);
 }
 
 /* media queries */

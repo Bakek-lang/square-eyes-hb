@@ -1,4 +1,5 @@
-import { results } from "./data/data.js";
+// import { makeApiCall } from "./data/fetch.js";
+import { loadAndReturnResults } from "./data/data.js";
 import { renderingHTML } from "./renderHTML/render.js";
 import {
   getActionArray,
@@ -15,8 +16,9 @@ import { renderingCart } from "./renderHTML/render_cart.js";
 import { renderImages } from "./renderHTML/render_images.js";
 import { changeTitle } from "./renderHTML/render_product.js";
 import { inTheCart } from "./cart_new.js";
+import { displayError } from "./components/display_error.js";
 
-function getDataForCurrentCategory() {
+function getDataForCurrentCategory(results) {
   const url = window.location.href;
 
   if (url.includes("action")) return getActionArray(results);
@@ -44,23 +46,49 @@ function getDataForCurrentCategory() {
     cartMovie.type = "cartMovie";
     return cartMovie;
   }
-  console.error("Unknown category");
   return null;
 }
 
-const dataToRender = getDataForCurrentCategory();
+async function main() {
+  try {
+    const data = await loadAndReturnResults();
+    localStorage.setItem("allMovies", JSON.stringify(data));
+    const dataToRender = getDataForCurrentCategory(data);
 
-if (dataToRender) {
-  if (dataToRender.type === "movieProduct") {
-    renderProductHTML(dataToRender);
-    changeTitle(dataToRender);
-  } else if (dataToRender.type === "cartMovie") {
-    renderingCart(dataToRender);
-  } else if (dataToRender.type === "favorites") {
-    renderImages(dataToRender);
-  } else {
-    renderingHTML(dataToRender);
+    if (!dataToRender) {
+      throw new Error("No data available to render for the current category.");
+    }
+
+    if (dataToRender.type === "movieProduct") {
+      renderProductHTML(dataToRender, data);
+      changeTitle(dataToRender);
+    } else if (dataToRender.type === "cartMovie") {
+      renderingCart(dataToRender);
+    } else if (dataToRender.type === "favorites") {
+      renderImages(dataToRender);
+    } else {
+      renderingHTML(dataToRender);
+    }
+
+    inTheCart();
+  } catch (error) {
+    const productContainer = document.querySelector(".product-flex-container");
+    const cartContainer = document.querySelector(".cart-container");
+    const imagesContainer = document.querySelector(".products-homepage");
+    const allMoviesContainer = document.querySelector(".all-movies-container");
+
+    if (productContainer) {
+      productContainer.innerHTML = displayError(error.message);
+    } else if (cartContainer) {
+      cartContainer.innerHTML = displayError(error.message);
+    } else if (imagesContainer) {
+      imagesContainer.innerHTML = displayError(error.message);
+    } else if (allMoviesContainer) {
+      allMoviesContainer.innerHTML = displayError(error.message);
+    } else {
+      console.error("Error. Container not found");
+    }
   }
 }
 
-inTheCart();
+main();
