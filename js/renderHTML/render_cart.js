@@ -9,8 +9,6 @@ export function retrieveMovieIds(results) {
 
   const dataObject = JSON.parse(dataString);
 
-  console.log(dataObject);
-
   const keysArray = Object.keys(dataObject);
   const movieIds = [];
   for (let i = 0; i < keysArray.length; i++) {
@@ -20,7 +18,6 @@ export function retrieveMovieIds(results) {
       }
     }
   }
-  console.log(movieIds);
   return movieIds;
 }
 
