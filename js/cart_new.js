@@ -3,10 +3,6 @@ export function inTheCart() {
   handleButtonsClicks();
 }
 
-// function removeCartButton() {
-//   const removeButton = document.querySelector("");
-// }
-
 function updateBadge() {
   let localCount = localStorage.getItem("count") || 0;
   const cartBadge = document.querySelector(".cart-badge");
@@ -56,5 +52,3 @@ function handleQuantityButtonClick(event) {
   }
   quantity.textContent = quantityCount;
 }
-
-// inTheCart();

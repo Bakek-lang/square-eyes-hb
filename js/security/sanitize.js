@@ -11,7 +11,6 @@ export function sanitizeHTML(input) {
 }
 
 // function for sanitizing URL's
-
 export function sanitizeURL(input) {
   try {
     const parsedURL = new URL(input);

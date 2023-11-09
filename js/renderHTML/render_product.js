@@ -22,7 +22,7 @@ export function updateMovieProduct() {
   });
   return matchingMovie;
 }
-// surprise me button for product details page (put inside renderproduct.html on bottom)
+// surprise me button for product details page
 function surpriseMe() {
   let randomNumber;
   while (true) {
@@ -35,7 +35,6 @@ function surpriseMe() {
   lastRandomNumber = randomNumber;
   const movie = results[randomNumber];
 
-  // update querystring, then use function updateMovieDisplay to get the current id and render movie based on that id
   updateQueryString(movie.id);
   function updateMovieDisplay() {
     const newMovie = updateMovieProduct();
