@@ -52,11 +52,9 @@ const dataToRender = getDataForCurrentCategory();
 
 if (dataToRender) {
   if (dataToRender.type === "movieProduct") {
-    console.log("u made it");
     renderProductHTML(dataToRender);
     changeTitle(dataToRender);
   } else if (dataToRender.type === "cartMovie") {
-    console.log("cart works");
     renderingCart(dataToRender);
   } else if (dataToRender.type === "favorites") {
     renderImages(dataToRender);

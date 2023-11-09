@@ -13,7 +13,6 @@ export function retrieveMovieIds(results) {
 
   const keysArray = Object.keys(dataObject);
   const movieIds = [];
-  console.log(keysArray);
   for (let i = 0; i < keysArray.length; i++) {
     for (let j = 0; j < results.length; j++) {
       if (keysArray[i] === results[j].id) {

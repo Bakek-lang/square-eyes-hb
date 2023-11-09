@@ -20,7 +20,6 @@ export function updateMovieProduct() {
   const matchingMovie = results.find(function (object) {
     return object.id === id;
   });
-  console.log(matchingMovie);
   return matchingMovie;
 }
 // surprise me button for product details page (put inside renderproduct.html on bottom)
