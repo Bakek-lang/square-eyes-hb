@@ -69,8 +69,6 @@ async function main() {
     } else {
       renderingHTML(dataToRender);
     }
-
-    inTheCart();
   } catch (error) {
     const productContainer = document.querySelector(".product-flex-container");
     const cartContainer = document.querySelector(".cart-container");
@@ -91,4 +89,5 @@ async function main() {
   }
 }
 
+inTheCart();
 main();
