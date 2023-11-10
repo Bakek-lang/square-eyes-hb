@@ -9,9 +9,7 @@ export async function loadAndReturnResults() {
     throw error;
   }
 }
-// export let results = await makeApiCall();
 
-// Function for comedy file arrays of data from API
 export function getComedyArray(movies) {
   const movieArray = [];
   for (let i = 0; i < movies.length; i++) {
@@ -22,7 +20,6 @@ export function getComedyArray(movies) {
   return movieArray;
 }
 
-// Function for action file arrays of data from API
 export function getActionArray(movies) {
   const movieArray = [];
   for (let i = 0; i < movies.length; i++) {
@@ -33,7 +30,6 @@ export function getActionArray(movies) {
   return movieArray;
 }
 
-// Function for kids file arrays of data from API
 export function getKidsArray(movies) {
   const movieArray = [];
   for (let i = 0; i < movies.length; i++) {
@@ -44,7 +40,6 @@ export function getKidsArray(movies) {
   return movieArray;
 }
 
-// Function for horror file arrays of data from API
 export function getHorrorArray(movies) {
   const movieArray = [];
   for (let i = 0; i < movies.length; i++) {
@@ -55,7 +50,6 @@ export function getHorrorArray(movies) {
   return movieArray;
 }
 
-// Function for SALE file arrays
 export function getSaleArray(movies) {
   const movieArray = [];
   for (let i = 0; i < movies.length; i++) {
@@ -66,7 +60,6 @@ export function getSaleArray(movies) {
   return movieArray;
 }
 
-// Function for favorites for home page
 export function getFavoritesArray(movies) {
   const movieArray = [];
   for (let i = 0; i < movies.length; i++) {

@@ -1,10 +1,10 @@
 import { sanitizeHTML } from "../security/sanitize.js";
 import { sanitizeURL } from "../security/sanitize.js";
-// import { results } from "../data/data.js";
 import { hideLoadingIndicator } from "../components/loading_indicator.js";
 
 // for surprise me function need to declare lastrandomnumber
 let lastRandomNumber = -1;
+
 // update query string
 function updateQueryString(getID) {
   const currentUrl = new URL(window.location.href);
@@ -38,11 +38,8 @@ function surpriseMe(data) {
   const movie = data[randomNumber];
 
   updateQueryString(movie.id);
-  // function updateMovieDisplay() {
   const newMovie = updateMovieProduct(data);
   renderProductHTML(newMovie);
-  // }
-  // updateMovieDisplay();
 }
 
 // render product details page

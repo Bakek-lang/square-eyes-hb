@@ -1,7 +1,6 @@
-# Square-Eyes 
+# Square-Eyes
 
+Course Assignment for JavaScript 1
 
-well well well
-
-Netlify link: 
+Netlify link:
 https://square-eyes-hb.netlify.app/
