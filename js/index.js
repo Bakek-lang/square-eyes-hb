@@ -27,15 +27,6 @@ function getDataForCurrentCategory(results) {
   if (url.includes("kids")) return getKidsArray(results);
   if (url.includes("sale")) return getSaleArray(results);
   if (url.includes("all_movies")) return results;
-  if (
-    url.includes("index") ||
-    url.includes("categories") ||
-    url.includes("about_us")
-  ) {
-    const favorites = getFavoritesArray(results);
-    favorites.type = "favorites";
-    return favorites;
-  }
   if (url.includes("product")) {
     const movie = updateMovieProduct(results);
     movie.type = "movieProduct";
@@ -45,6 +36,16 @@ function getDataForCurrentCategory(results) {
     const cartMovie = retrieveMovieIds(results);
     cartMovie.type = "cartMovie";
     return cartMovie;
+  }
+  if (
+    url.includes("index") ||
+    url.includes("categories") ||
+    url.includes("about_us") ||
+    url.includes("")
+  ) {
+    const favorites = getFavoritesArray(results);
+    favorites.type = "favorites";
+    return favorites;
   }
   return null;
 }
