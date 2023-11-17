@@ -71,7 +71,7 @@ function checkAndUpdateCartEmptyMessage() {
   const keys = Object.keys(dataObject);
 
   if (keys.length === 0) {
-    emptyCartMessage.style.display = "";
+    emptyCartMessage.style.display = "flex";
   } else {
     emptyCartMessage.style.display = "none";
   }

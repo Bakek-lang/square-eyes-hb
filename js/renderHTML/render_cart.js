@@ -27,7 +27,7 @@ export function renderingCart(results) {
   const emptyCartMessage = document.querySelector(".empty-cart-message");
 
   if (results.length === 0) {
-    emptyCartMessage.style.display = "";
+    emptyCartMessage.style.display = "flex";
   } else {
     emptyCartMessage.style.display = "none";
   }

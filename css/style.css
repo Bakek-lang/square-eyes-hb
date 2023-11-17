@@ -1084,6 +1084,7 @@ input[type="password"] {
   color: var(--yellow);
   border-top: 1px solid var(--yellow);
   padding-top: 20px;
+  display: none;
 }
 
 .empty-cart-message p {
