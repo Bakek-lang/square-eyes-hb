@@ -1,12 +1,31 @@
 export function inTheCart() {
   updateBadge();
   handleButtonsClicks();
+  localStorage.removeItem("count");
 }
 
 function updateBadge() {
-  let localCount = localStorage.getItem("count") || 0;
+  const totalItemCount = calculateTotalItemCount();
   const cartBadge = document.querySelector(".cart-badge");
-  cartBadge.textContent = localCount;
+  cartBadge.textContent = totalItemCount;
+}
+
+function calculateTotalItemCount() {
+  const dataString = localStorage.getItem("data");
+  if (!dataString) {
+    return 0;
+  }
+
+  const dataObject = JSON.parse(dataString);
+
+  let totalCount = 0;
+
+  for (let key in dataObject) {
+    if (dataObject.hasOwnProperty(key)) {
+      totalCount += dataObject[key];
+    }
+  }
+  return totalCount;
 }
 
 function handleButtonsClicks() {
@@ -20,7 +39,51 @@ function handleButtonsClicks() {
     ) {
       handleQuantityButtonClick(event);
     }
+    if (event.target.classList.contains("remove-button")) {
+      handleRemoveButtonClick(event);
+    }
   });
+}
+
+function handleRemoveButtonClick(event) {
+  const cartItem = event.target.closest(".cart-item");
+  if (cartItem) {
+    const itemId = cartItem.getAttribute("data-id-cart");
+    removeIdFromLocalStorage(itemId);
+    cartItem.remove();
+    updateBadge();
+
+    checkAndUpdateCartEmptyMessage();
+  }
+}
+
+function checkAndUpdateCartEmptyMessage() {
+  const dataString = localStorage.getItem("data");
+  let dataObject;
+  if (dataString) {
+    dataObject = JSON.parse(dataString);
+  } else {
+    dataObject = {};
+  }
+
+  const emptyCartMessage = document.querySelector(".empty-cart-message");
+
+  const keys = Object.keys(dataObject);
+
+  if (keys.length === 0) {
+    emptyCartMessage.style.display = "";
+  } else {
+    emptyCartMessage.style.display = "none";
+  }
+}
+
+function removeIdFromLocalStorage(itemId) {
+  const cartItemString = localStorage.getItem("data");
+  const cartItems = JSON.parse(cartItemString);
+
+  delete cartItems[itemId];
+
+  localStorage.setItem("data", JSON.stringify(cartItems));
 }
 
 function handleWatchButtonClick(event) {

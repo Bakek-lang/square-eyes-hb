@@ -24,12 +24,21 @@ export function retrieveMovieIds(results) {
 export function renderingCart(results) {
   const cartContainer = document.querySelector(".cart-container");
   const totalPriceDiv = document.querySelector(".total-price-cart");
+  const emptyCartMessage = document.querySelector(".empty-cart-message");
+
+  if (results.length === 0) {
+    emptyCartMessage.style.display = "";
+  } else {
+    emptyCartMessage.style.display = "none";
+  }
 
   const fragment = document.createDocumentFragment();
   const parser = new DOMParser();
 
   for (let i = 0; i < results.length; i++) {
-    const cartItems = `<div class="cart-item">
+    const cartItems = `<div class="cart-item" data-id-cart="${sanitizeHTML(
+      results[i].id
+    )}">
     <div class="image-text-cart">
       <img class="cart-img" src="${sanitizeURL(results[i].image)}" alt="" />
       <div class="cart-item-text">
