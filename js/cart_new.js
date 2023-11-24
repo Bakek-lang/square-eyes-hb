@@ -28,6 +28,19 @@ function calculateTotalItemCount() {
   return totalCount;
 }
 
+function checkQuantity() {
+  const dataString = localStorage.getItem("data");
+  const dataObject = JSON.parse(dataString);
+  const quantity =
+    document.querySelectorAll(".quantity") ||
+    document.querySelector(".quantity");
+  for (let key in dataObject) {
+    if (dataObject.hasOwnProperty(key)) {
+      quantity.textContent = dataObject[key];
+    }
+  }
+}
+
 function handleButtonsClicks() {
   document.addEventListener("click", function (event) {
     if (event.target.classList.contains("watch-button")) {
@@ -52,12 +65,12 @@ function handleRemoveButtonClick(event) {
     removeIdFromLocalStorage(itemId);
     cartItem.remove();
     updateBadge();
-
+    updateTotalPrice();
     checkAndUpdateCartEmptyMessage();
   }
 }
 
-function checkAndUpdateCartEmptyMessage() {
+export function checkAndUpdateCartEmptyMessage() {
   const dataString = localStorage.getItem("data");
   let dataObject;
   if (dataString) {
@@ -67,11 +80,13 @@ function checkAndUpdateCartEmptyMessage() {
   }
 
   const emptyCartMessage = document.querySelector(".empty-cart-message");
+  const priceCartDiv = document.querySelector(".total-price-cart");
 
   const keys = Object.keys(dataObject);
 
   if (keys.length === 0) {
     emptyCartMessage.style.display = "flex";
+    priceCartDiv.style.display = "none";
   } else {
     emptyCartMessage.style.display = "none";
   }
@@ -114,4 +129,39 @@ function handleQuantityButtonClick(event) {
     quantityCount--;
   }
   quantity.textContent = quantityCount;
+
+  const cartItem = container.closest(".cart-item");
+  const itemId = cartItem.getAttribute("data-id-cart");
+  const dataObject = JSON.parse(localStorage.getItem("data") || "{}");
+  dataObject[itemId] = quantityCount;
+  localStorage.setItem("data", JSON.stringify(dataObject));
+
+  // Total price on each movie
+  let moviePriceText = cartItem.querySelector(".movie-price").textContent;
+  let cleanedMoviePriceText = moviePriceText.replace(/[^0-9.]+/g, "");
+  const moviePrice = Number(cleanedMoviePriceText);
+
+  const totalMoviePriceText = cartItem.querySelector(".total-movie-price");
+  totalMoviePriceText.textContent =
+    "$" + (moviePrice * quantityCount).toFixed(2);
+
+  // Total price on all movies
+  updateTotalPrice();
+
+  updateBadge();
+}
+
+export function updateTotalPrice() {
+  const totalMoviePriceElements =
+    document.querySelectorAll(".total-movie-price");
+  let totalPrice = 0;
+
+  totalMoviePriceElements.forEach((element) => {
+    let priceText = element.textContent.replace(/[^0-9.]+/g, "");
+    let price = Number(priceText);
+    totalPrice += price;
+  });
+
+  const totalPriceAll = document.querySelector(".total-price-cart-text p");
+  totalPriceAll.textContent = "$" + totalPrice.toFixed(2);
 }

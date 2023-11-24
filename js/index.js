@@ -17,6 +17,8 @@ import { renderImages } from "./renderHTML/render_images.js";
 import { changeTitle } from "./renderHTML/render_product.js";
 import { inTheCart } from "./cart_new.js";
 import { displayError } from "./components/display_error.js";
+import { checkAndUpdateCartEmptyMessage } from "./cart_new.js";
+import { updateTotalPrice } from "./cart_new.js";
 
 function getDataForCurrentCategory(results) {
   const url = window.location.href;
@@ -33,6 +35,7 @@ function getDataForCurrentCategory(results) {
     return movie;
   }
   if (url.includes("cart")) {
+    checkAndUpdateCartEmptyMessage();
     const cartMovie = retrieveMovieIds(results);
     cartMovie.type = "cartMovie";
     return cartMovie;
@@ -65,6 +68,7 @@ async function main() {
       changeTitle(dataToRender);
     } else if (dataToRender.type === "cartMovie") {
       renderingCart(dataToRender);
+      updateTotalPrice();
     } else if (dataToRender.type === "favorites") {
       renderImages(dataToRender);
     } else {

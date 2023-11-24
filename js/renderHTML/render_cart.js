@@ -35,7 +35,10 @@ export function renderingCart(results) {
   const fragment = document.createDocumentFragment();
   const parser = new DOMParser();
 
+  const dataObject = JSON.parse(localStorage.getItem("data") || "{}");
+
   for (let i = 0; i < results.length; i++) {
+    const quantity = dataObject[results[i].id];
     const cartItems = `<div class="cart-item" data-id-cart="${sanitizeHTML(
       results[i].id
     )}">
@@ -48,13 +51,15 @@ export function renderingCart(results) {
     </div>
     <div class="quantity-container">
       <i class="fa-solid fa-minus"></i>
-      <div class="quantity">1</div>
+      <div class="quantity">${quantity}</div>
       <i class="fa-solid fa-plus"></i>
     </div>
   
-    <p>$${sanitizeHTML(results[i].discountedPrice)}</p>
+    <p class="movie-price">$${sanitizeHTML(results[i].discountedPrice)}</p>
   
-    <p>$9.99</p>
+    <p class="total-movie-price">$${(
+      Number(sanitizeHTML(results[i].discountedPrice)) * quantity
+    ).toFixed(2)}</p>
   
     <button class="remove-button">Remove</button>
   </div>

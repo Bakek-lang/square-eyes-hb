@@ -97,6 +97,10 @@ h1 {
   padding: 0px 25px;
 }
 
+.text1:focus {
+  outline: 2px solid var(--black);
+}
+
 .nav-icons {
   margin-right: 5%;
   transform: scale(1.5);
