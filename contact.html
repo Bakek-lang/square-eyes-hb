@@ -19,6 +19,7 @@
     ></script>
     <link rel="icon" href="Logo/SquareEyes_Logo.png" />
     <script type="module" src="js/index.js"></script>
+    <script defer src="/js/components/form_validation.js"></script>
     <!-- Hotjar Tracking Code for https://square-eyes-hb-ixd.netlify.app -->
     <script>
       (function (h, o, t, j, a, r) {
@@ -102,21 +103,27 @@
         <div class="Container">
           <a class="back-button" onclick="history.go(-1)">&#8592; BACK</a>
           <form action="index.html">
-            <label for="name">Your Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Your name.."
-            />
+            <div class="contact-name-container">
+              <label for="name">Your Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your name.."
+              />
+              <span class="validation-message" id="name-validation"></span>
+            </div>
 
-            <label for="email">Email</label>
-            <input
-              type="text"
-              id="email"
-              name="email"
-              placeholder="Your email.."
-            />
+            <div class="contact-email-container">
+              <label for="email">Email</label>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                placeholder="Your email.."
+              />
+              <span class="validation-message" id="email-validation"></span>
+            </div>
 
             <label for="country">Country</label>
             <select name="country" id="country">
@@ -129,14 +136,17 @@
               <option value="other">Other</option>
             </select>
 
-            <label for="subject">Message</label>
-            <textarea
-              name="subject"
-              id="subject"
-              placeholder="Write something.."
-              cols="42"
-              rows="9"
-            ></textarea>
+            <div class="contact-message-container">
+              <label for="subject">Message</label>
+              <textarea
+                name="subject"
+                id="subject"
+                placeholder="Write something.."
+                cols="42"
+                rows="9"
+              ></textarea>
+              <span class="validation-message" id="message-validation"></span>
+            </div>
 
             <input type="submit" value="Send" class="tile-link" />
           </form>
