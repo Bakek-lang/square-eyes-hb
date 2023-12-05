@@ -786,7 +786,7 @@ input[type="checkbox"] {
   border-radius: 25px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 50% 50%;
+  grid-template-rows: minmax(260px, auto) 1fr;
   border: 1px solid var(--yellow);
   margin-bottom: 42px;
 }
