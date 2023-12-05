@@ -28,6 +28,7 @@ function calculateTotalItemCount() {
   return totalCount;
 }
 
+// FInd out why this is not used
 function checkQuantity() {
   const dataString = localStorage.getItem("data");
   const dataObject = JSON.parse(dataString);
