@@ -54,7 +54,7 @@ export function renderProductHTML(results, allMovies) {
       <img src="${sanitizeURL(results.image)}" alt="Movie Post" />
       <a data-movieid="${sanitizeHTML(
         results.id
-      )}" class="watch-button">Add to Cart</a>
+      )}" class="watch-button cart-button-productpage">Add to Cart</a>
     </div>
       <h2 class="movie-title">${sanitizeHTML(results.title)}</h2>
       <p class="text-productpage">
