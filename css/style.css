@@ -402,7 +402,6 @@ main p {
   flex-direction: column;
   align-items: center;
   margin-left: 5px;
-  padding-right: 110px;
 }
 
 .placeholder,
@@ -546,7 +545,6 @@ input[type="submit"] {
 
 .red-text-span {
   margin-left: 40px;
-  font-size: 52px;
   color: var(--red);
 }
 
