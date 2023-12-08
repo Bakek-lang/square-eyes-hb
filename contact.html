@@ -111,7 +111,10 @@
                 name="name"
                 placeholder="Your name.."
               />
-              <span class="validation-message" id="name-validation"></span>
+              <span
+                class="validation-message hidden"
+                id="name-validation"
+              ></span>
             </div>
 
             <div class="contact-email-container">
@@ -122,19 +125,23 @@
                 name="email"
                 placeholder="Your email.."
               />
-              <span class="validation-message" id="email-validation"></span>
+              <span
+                class="validation-message hidden"
+                id="email-validation"
+              ></span>
             </div>
-
-            <label for="country">Country</label>
-            <select name="country" id="country">
-              <option value="norway">Norway</option>
-              <option value="canada">Canada</option>
-              <option value="sweden">Sweden</option>
-              <option value="portugal">Portugal</option>
-              <option value="spain">Spain</option>
-              <option value="england">England</option>
-              <option value="other">Other</option>
-            </select>
+            <div class="contact-country-container">
+              <label for="country">Country</label>
+              <select name="country" id="country">
+                <option value="norway">Norway</option>
+                <option value="canada">Canada</option>
+                <option value="sweden">Sweden</option>
+                <option value="portugal">Portugal</option>
+                <option value="spain">Spain</option>
+                <option value="england">England</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
 
             <div class="contact-message-container">
               <label for="subject">Message</label>
@@ -145,7 +152,10 @@
                 cols="42"
                 rows="9"
               ></textarea>
-              <span class="validation-message" id="message-validation"></span>
+              <span
+                class="validation-message hidden"
+                id="message-validation"
+              ></span>
             </div>
 
             <input type="submit" value="Send" class="tile-link" />

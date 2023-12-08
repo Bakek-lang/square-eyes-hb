@@ -42,7 +42,12 @@ export function renderingCart(results) {
     const cartItems = `<div class="cart-item" data-id-cart="${sanitizeHTML(
       results[i].id
     )}">
-    <div class="image-text-cart">
+    <div class="mobile-cart-header">
+      <p class="mobile-product-header">PRODUCT DETAILS</p>
+      <p class="mobile-quantity-header">QUANTITY</p>
+      <p class="mobile-price-header">PRICE</p>
+    </div>
+      <div class="image-text-cart">
       <img class="cart-img" src="${sanitizeURL(results[i].image)}" alt="" />
       <div class="cart-item-text">
         <h2>${sanitizeHTML(results[i].title)}</h2>

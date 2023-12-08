@@ -56,6 +56,10 @@ function handleButtonsClicks() {
     if (event.target.classList.contains("remove-button")) {
       handleRemoveButtonClick(event);
     }
+    if (event.target.classList.contains("purchase-button")) {
+      localStorage.clear();
+      updateBadge();
+    }
   });
 }
 
