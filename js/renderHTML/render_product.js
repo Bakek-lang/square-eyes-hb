@@ -1,5 +1,6 @@
 import { sanitizeHTML } from "../security/sanitize.js";
 import { sanitizeURL } from "../security/sanitize.js";
+import { stripHTML } from "../security/sanitize.js";
 import { hideLoadingIndicator } from "../components/loading_indicator.js";
 
 // for surprise me function need to declare lastrandomnumber
@@ -20,7 +21,7 @@ export function updateMovieProduct(data) {
   const id = params.get("id");
 
   const matchingMovie = data.find(function (object) {
-    return object.id === id;
+    return object.id.toString() === id;
   });
   return matchingMovie;
 }
@@ -51,23 +52,25 @@ export function renderProductHTML(results, allMovies) {
   productContainer.innerHTML = "";
   const products = `<a class="back-button" onclick="history.go(-1)">&#8592; BACK</a>
     <div class="image-button-flex">
-      <img src="${sanitizeURL(results.image)}" alt="Movie Post" />
+      <img src="${sanitizeURL(results.images[0].src)}" alt="Movie Post" />
       <a data-movieid="${sanitizeHTML(
         results.id
       )}" class="watch-button cart-button-productpage">Add to Cart</a>
     </div>
-      <h2 class="movie-title">${sanitizeHTML(results.title)}</h2>
+      <h2 class="movie-title">${sanitizeHTML(results.name)}</h2>
       <p class="text-productpage">
-      ${sanitizeHTML(results.description)}
+      ${stripHTML(results.description)}
       </p>
       <div class="first-text-flex">
-      <p class="price">Price: $${sanitizeHTML(results.discountedPrice)}</p>
-      <p class="rating">Rating: ${sanitizeHTML(results.rating)}</p>
+      <p class="price">Price: $${sanitizeHTML(results.prices.sale_price)}</p>
+      <p class="rating">Rating: ${sanitizeHTML(
+        results.attributes[0].terms[0].name
+      )}</p>
       </div>
       <div class="second-text-flex">
-      <p class="genre">Genre: ${sanitizeHTML(results.genre)}</p>
+      <p class="genre">Genre: ${sanitizeHTML(results.categories[0].name)}</p>
       <p class="release-date">Release date: ${sanitizeHTML(
-        results.released
+        results.attributes[1].terms[0].name
       )}</p>
       </div>
       
@@ -90,5 +93,5 @@ export function renderProductHTML(results, allMovies) {
 }
 
 export function changeTitle(movie) {
-  document.title = `${movie.title} | Square Eyes`;
+  document.title = `${movie.name} | Square Eyes`;
 }

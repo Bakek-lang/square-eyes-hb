@@ -31,6 +31,7 @@ function getDataForCurrentCategory(results) {
   if (url.includes("all_movies")) return results;
   if (url.includes("product")) {
     const movie = updateMovieProduct(results);
+    console.log(movie);
     movie.type = "movieProduct";
     return movie;
   }
@@ -48,6 +49,7 @@ function getDataForCurrentCategory(results) {
   ) {
     const favorites = getFavoritesArray(results);
     favorites.type = "favorites";
+    console.log(favorites);
     return favorites;
   }
   return null;

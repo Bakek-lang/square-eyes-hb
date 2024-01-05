@@ -11,13 +11,13 @@ export function renderingHTML(results) {
 
     const moviePrice = document.createElement("p");
     moviePrice.className = "pricetag";
-    moviePrice.textContent = "$" + results[i].price;
+    moviePrice.textContent = "$" + results[i].prices.regular_price;
     movieContainer.appendChild(moviePrice);
 
-    if (results[i].onSale) {
+    if (results[i].on_sale) {
       const movieDiscountPrice = document.createElement("span");
       movieDiscountPrice.className = "red-text-span";
-      movieDiscountPrice.textContent = "$" + results[i].discountedPrice;
+      movieDiscountPrice.textContent = "$" + results[i].prices.sale_price;
       moviePrice.appendChild(movieDiscountPrice);
 
       const redLineDiscount = document.createElement("div");
@@ -27,13 +27,13 @@ export function renderingHTML(results) {
 
     const movieImage = document.createElement("img");
     movieImage.className = "movie-image";
-    movieImage.src = results[i].image;
-    movieImage.alt = `Movie ${results[i].title}`;
+    movieImage.src = results[i].images[0].src;
+    movieImage.alt = `Movie ${results[i].name}`;
     movieContainer.appendChild(movieImage);
 
     const movieTitle = document.createElement("p");
     movieTitle.className = "movie-title";
-    movieTitle.textContent = results[i].title;
+    movieTitle.textContent = results[i].name;
     movieContainer.appendChild(movieTitle);
 
     const movieCartButton = document.createElement("a");

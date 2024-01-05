@@ -13,7 +13,7 @@ export async function loadAndReturnResults() {
 export function getComedyArray(movies) {
   const movieArray = [];
   for (let i = 0; i < movies.length; i++) {
-    if (movies[i].genre === "Comedy") {
+    if (movies[i].categories[0].name === "Comedy") {
       movieArray.push(movies[i]);
     }
   }
@@ -23,7 +23,7 @@ export function getComedyArray(movies) {
 export function getActionArray(movies) {
   const movieArray = [];
   for (let i = 0; i < movies.length; i++) {
-    if (movies[i].genre === "Action") {
+    if (movies[i].categories[0].name === "Action") {
       movieArray.push(movies[i]);
     }
   }
@@ -33,17 +33,18 @@ export function getActionArray(movies) {
 export function getKidsArray(movies) {
   const movieArray = [];
   for (let i = 0; i < movies.length; i++) {
-    if (movies[i].genre === "Kids") {
+    if (movies[i].categories[0].name === "Kids") {
       movieArray.push(movies[i]);
     }
   }
+  console.log(movieArray);
   return movieArray;
 }
 
 export function getHorrorArray(movies) {
   const movieArray = [];
   for (let i = 0; i < movies.length; i++) {
-    if (movies[i].genre === "Horror") {
+    if (movies[i].categories[0].name === "Horror") {
       movieArray.push(movies[i]);
     }
   }
@@ -53,20 +54,22 @@ export function getHorrorArray(movies) {
 export function getSaleArray(movies) {
   const movieArray = [];
   for (let i = 0; i < movies.length; i++) {
-    if (movies[i].onSale) {
+    if (movies[i].on_sale) {
       movieArray.push(movies[i]);
     }
   }
+  console.log(movieArray);
   return movieArray;
 }
 
 export function getFavoritesArray(movies) {
   const movieArray = [];
-  for (let i = 0; i < movies.length; i++) {
-    if (movies[i].favorite) {
+  for (let i = 0; i < 4; i++) {
+    if (movies[i]) {
       movieArray.push(movies[i]);
     }
   }
   movieArray.shift();
+  console.log(movieArray);
   return movieArray;
 }

@@ -10,8 +10,8 @@ export function renderImages(movie) {
     imageContainer.appendChild(imageATag);
 
     const imageImage = document.createElement("img");
-    imageImage.src = movie[i].image;
-    imageImage.alt = `Movie cover for ${movie[i].title}`;
+    imageImage.src = movie[i].images[0].src;
+    imageImage.alt = `Movie cover for ${movie[i].name}`;
     imageATag.appendChild(imageImage);
     container.appendChild(imageContainer);
   }

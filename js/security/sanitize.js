@@ -26,3 +26,11 @@ export function sanitizeURL(input) {
     return null;
   }
 }
+// get textContent from values with html tags
+export function stripHTML(input) {
+  let tempDiv = document.createElement("div");
+  tempDiv.innerHTML = input;
+  let strippedText = tempDiv.textContent;
+
+  return sanitizeHTML(strippedText);
+}
