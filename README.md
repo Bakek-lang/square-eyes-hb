@@ -1,6 +1,6 @@
 # Square-Eyes
 
-Course Assignment for JavaScript 1
+Course Assignment for CMS
 
 Netlify link:
-https://square-eyes-hb.netlify.app/
+https://square-eyes-hb-ixd.netlify.app/
