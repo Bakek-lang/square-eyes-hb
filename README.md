@@ -68,7 +68,7 @@ Thank you for your interest in contributing to Square Eyes!
 
 ## Contact
 
-[My LinkedIn page](www.linkedin.com/in/henrik-bakke-76b716294)
+[My LinkedIn page](https://www.linkedin.com/in/henrik-bakke-76b716294)
 
 
 ## Live site
