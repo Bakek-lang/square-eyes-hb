@@ -71,18 +71,7 @@ Thank you for your interest in contributing to Square Eyes!
 [My LinkedIn page](www.linkedin.com/in/henrik-bakke-76b716294)
 
 
-
-
-
-
-
-
-
-
-
-
-
-# Square-Eyes
+## Live site
 
 Course Assignment for CMS
 
