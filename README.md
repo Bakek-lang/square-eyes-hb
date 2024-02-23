@@ -2,6 +2,12 @@
 
 Welcome to the GitHub page for Square Eyes! This project was all about creating a movie website over a semester for school. It's designed to look like a place where you can buy movies, but it's really just a frontend project. So, you can browse and pick movies, add them to a cart, but there's no actual buying involved.
 
+## Live site
+
+Course Assignment for CMS
+
+Netlify link:
+https://square-eyes-hb-ixd.netlify.app/
 
 ## Description
 
@@ -69,11 +75,3 @@ Thank you for your interest in contributing to Square Eyes!
 ## Contact
 
 [My LinkedIn page](https://www.linkedin.com/in/henrik-bakke-76b716294)
-
-
-## Live site
-
-Course Assignment for CMS
-
-Netlify link:
-https://square-eyes-hb-ixd.netlify.app/
